@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Responsive Admin &amp; Dashboard Template based on Bootstrap 5">
+	<meta name="author" content="AdminKit">
+	<meta name="keywords"
+		content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel="shortcut icon" href="img/icons/icon-48x48.png" />
+
+	<link rel="canonical" href="https://demo-basic.adminkit.io/pages-blank.html" />
+
+	<title>Transfer</title>
+
+	<link href="css/app.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<div class="wrapper">
+		<nav id="sidebar" class="sidebar js-sidebar">
+			<div class="sidebar-content js-simplebar">
+				<a class="sidebar-brand" href="dashboard.html">
+					<span class="align-middle">Mabrook</span>
+				</a>
+
+				<ul class="sidebar-nav">
+					<li class="sidebar-header">
+						Pages
+					</li>
+
+					<li class="sidebar-item ">
+						<a class="sidebar-link" href="dashboard.html">
+							<i class="align-middle" data-feather="sliders"></i> <span
+								class="align-middle">Dashboard</span>
+						</a>
+					</li>
+
+					<li class="sidebar-item active ">
+						<a class="sidebar-link" href="transferFunds.html">
+							<i class="align-middle" data-feather="book"></i> <span class="align-middle">Transfer Funds</span>
+						</a>
+					</li>
+
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="fundWallet.html">
+							<i class="align-middle" data-feather="book"></i> <span class="align-middle">Fund Wallet</span>
+						</a>
+					</li>
+
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="history.html">
+							<i class="align-middle" data-feather="user"></i> <span class="align-middle"> History</span>
+						</a>
+					</li>
+
+					
+			</div>
+		</nav>
+
+		<div class="main">
+			<nav class="navbar navbar-expand navbar-light navbar-bg">
+				<a class="sidebar-toggle js-sidebar-toggle">
+					<i class="hamburger align-self-center"></i>
+				</a>
+
+				<div class="navbar-collapse collapse">
+					<ul class="navbar-nav navbar-align">
+						<li class="nav-item dropdown">
+							
+
+						<li class="nav-item dropdown">
+							<a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#"
+								data-bs-toggle="dropdown">
+								<i class="align-middle" data-feather="settings"></i>
+							</a>
+
+							<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#"
+								data-bs-toggle="dropdown">
+								<img src="img/avatars/avatar.jpg" class="avatar img-fluid rounded me-1"
+									alt="Charles Hall" /> <span id="greetingName" class="text-dark"></span>
+							</a>
+							<div class="dropdown-menu dropdown-menu-end">
+								
+								<a class="dropdown-item" href="" id="signOutBTN">Log out</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</nav>
+
+			<main class="content">
+				<div class="container-fluid p-0">
+
+					<h1 class="h3 mb-3">Transfer Funds</h1>
+
+					<div class="row">
+						<div class="col-12">
+							<div class="card">
+								<div class="card-header">
+									<h5 class="card-title mb-0">Account Balance: ₦<span
+											id="currentAccountBalance">Balance</span></h5>
+								</div>
+
+
+							</div>
+							<!-- <div class="card container-fluid">
+								<div class="card-header">
+									<h5 class="card-title mb-0">Input</h5>
+								</div>
+								<div class="card-body">
+									<input type="text" class="form-control" placeholder="Input">
+								</div>
+							</div> -->
+
+							<div class="card p-5 ">
+								<div>
+									<p id="verifiedName"></p>
+									<label for="accountNumber" class="form-label ">Receipient Account Number</label>
+									<input type="number" class="form-control  " name="accountNumber" id="accountNumber">
+									<a id="accountVerifyBTN" class="float-end btn btn-primary mt-2  ">Verify</a>
+								</div>
+
+
+								<label for="" class="form-label ">Amount to transfer</label>
+								<input type="number" id="amountToTransfer" class="form-control ">
+
+								<label for="narration" class="form-label mt-2 ">Narration</label>
+								<input type="text" id="transferNarration" class="form-control ">
+								<button class="btn btn-success  m-3 " id="transferBTN">Transfer</button>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+
+				<!-- Recent Transaction -->
+				<div class="row">
+					<div>
+						<div class="card flex-fill">
+							<div class="card-header">
+
+								<h5 class="card-title mb-0">Recent Transactions</h5>
+							</div>
+							<table class="table table-hover my-0">
+								<thead>
+									<tr>
+										<th>Serial Number</th>
+										<th>Sender</th>
+										<th>Recipient</th>
+										<th>Narration</th>
+										<th>Amount</th>
+										<th>Date & Time</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody id="transactionTableBody">
+									<tr><td>Loading...</td></tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+
+				</div>	
+			</main>
+
+			<footer class="footer">
+				<div class="container-fluid">
+					<div class="row text-muted">
+						<div class="col-6 text-start">
+							<p class="mb-0">
+								<a class="text-muted" href="https://adminkit.io/"
+									target="_blank"><strong>AdminKit</strong></a> - <a class="text-muted"
+									href="https://adminkit.io/" target="_blank"><strong>Bootstrap Admin
+										Template</strong></a> &copy;
+							</p>
+						</div>
+						<div class="col-6 text-end">
+							<ul class="list-inline">
+								<li class="list-inline-item">
+									<a class="text-muted" href="https://adminkit.io/" target="_blank">Support</a>
+								</li>
+								<li class="list-inline-item">
+									<a class="text-muted" href="https://adminkit.io/" target="_blank">Help Center</a>
+								</li>
+								<li class="list-inline-item">
+									<a class="text-muted" href="https://adminkit.io/" target="_blank">Privacy</a>
+								</li>
+								<li class="list-inline-item">
+									<a class="text-muted" href="https://adminkit.io/" target="_blank">Terms</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</div>
+
+	<script src="js/app.js"></script>
+
+	<script type="module">
+
+		import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+		import { getFirestore, collection, query, where, getDocs, updateDoc, doc, addDoc } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js";
+		import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
+
+
+		const firebaseConfig = {
+			apiKey: "AIzaSyBorT6AWCbJcUbKrHAFqzkFL4vYsnYWS7k",
+			authDomain: "bankapp-9d509.firebaseapp.com",
+			projectId: "bankapp-9d509",
+			storageBucket: "bankapp-9d509.appspot.com",
+			messagingSenderId: "1026193994379",
+			appId: "1:1026193994379:web:52361708f33008c1a1da8e"
+		};
+
+		// Initialize Firebase
+		const app = initializeApp(firebaseConfig);
+		//initialize getFirestore
+		const db = getFirestore(app)
+		const colRef = collection(db, 'usersDetails')
+		const auth = getAuth()
+
+		const greeting = document.getElementById("greeting");
+		const greetingName = document.getElementById('greetingName')
+		const signOutBTN = document.getElementById("signOutBTN");
+		const accBalance = document.getElementById('currentAccountBalance')
+
+		let currentUser
+
+
+
+		onAuthStateChanged(auth, async (user) => {
+			if (user) {
+				currentUser = user
+				try {
+					const q = query(colRef, where('email', '==', user.email));
+					const userDetails = await getDocs(q);
+					let userData = {};
+					userDetails.forEach(function (userDoc) {
+						userData = userDoc.data();
+					});
+					const { fullName, accountNo, bankName, accountBalance } = userData;
+					accBalance.innerHTML = accountBalance
+					
+				} catch (error) {
+					console.log(error);
+				}
+			} else {
+				window.location.href = 'login.html';
+			}
+		});
+
+		signOutBTN.addEventListener('click', async () => {
+			try {
+				await signOut(auth)
+				console.log('User has been signed out');
+			} catch (error) {
+				console.log(error);
+			}
+		});
+
+		// fundUser.addEventListener('click', async () => {
+		// 	let amountToFund = +document.getElementById('amountToFund').value;
+		// 	try {
+		// 		if (currentUser) {
+
+		// 			const q = query(colRef, where('email', '==', currentUser.email));
+		// 			console.log(currentUser.email);
+		// 			const userDetails = await getDocs(q);
+
+		// 			let accountBalance;
+		// 			let userId;
+		// 			userDetails.forEach(function (userDoc) {
+		// 				accountBalance = userDoc.data().accountBalance;
+		// 				userId = userDoc.id;
+		// 			});
+
+		// 			let currentBalance = accountBalance + amountToFund;
+
+
+		// 			await updateDoc(doc(colRef, userId), {
+		// 				accountBalance: currentBalance
+		// 			});
+
+		// 			console.log("Account Balance:", currentBalance);
+
+		// 		} else {
+		// 			console.log("User is not logged in.");
+		// 		}
+		// 	} catch (error) {
+		// 		console.log(error);
+		// 	}
+		// });
+
+
+		//    accountVerifyBTN = document.getElementById('accountVerifyBTN')
+
+		accountVerifyBTN.addEventListener('click', async () => {
+			let accountNumber = +document.getElementById('accountNumber').value;
+
+			if (accountNumber) {
+				try {
+					const q = query(colRef, where('accountNo', '==', accountNumber));
+					const userDetails = await getDocs(q);
+
+					let accountName;
+					let accountBalance;
+					let userId;
+
+					userDetails.forEach(function (userDoc) {
+						accountName = userDoc.data().accountName;
+						accountBalance = userDoc.data().accountBalance;
+						userId = userDoc.id;
+					});
+
+					if (userDetails.empty) {
+						alert('No user found with the provided account number.');
+						return;
+					}
+
+					verifiedName.innerHTML = accountName
+				} catch (error) {
+					console.log(error);
+				}
+			} else {
+				alert('Please enter an account number.');
+			}
+		});
+
+		// Function to generate a unique serial number
+		function generateSerialNumber() {
+			const timestamp = Date.now().toString(); // Get current timestamp as string
+			const randomNumber = Math.floor(Math.random() * 10000).toString().padStart(4, '0'); // Generate a random 4-digit number
+			return timestamp + '-' + randomNumber; // Concatenate timestamp and random number
+		}
+
+
+		transferBTN.addEventListener('click', async () => {
+			let accountNumber = +document.getElementById('accountNumber').value;
+			let amountToTransfer = +document.getElementById('amountToTransfer').value;
+			let narration = document.getElementById('transferNarration').value;
+
+			console.log(accountNumber, amountToTransfer, narration);
+
+			try {
+				if (currentUser) {
+					console.log("colRef:", colRef);
+
+					const currentUserQuery = query(colRef, where('email', '==', currentUser.email));
+					const currentUserDetails = await getDocs(currentUserQuery);
+
+					let currentUserId;
+					let currentUserBalance;
+
+					currentUserDetails.forEach(function (userDoc) {
+						currentUserBalance = userDoc.data().accountBalance;
+						currentUserId = userDoc.id;
+					});
+
+					if (currentUserBalance < amountToTransfer) {
+						alert('Insufficient balance');
+						return;
+					}
+
+					let updatedCurrentUserBalance = currentUserBalance - amountToTransfer;
+
+					if (colRef && currentUserId) {
+						await updateDoc(doc(colRef, currentUserId), {
+							accountBalance: updatedCurrentUserBalance
+						});
+					} else {
+						alert('colRef or currentUserId is empty or undefined');
+						return;
+					}
+
+					const recipientUserQuery = query(colRef, where('accountNo', '==', accountNumber));
+					const recipientUserDetails = await getDocs(recipientUserQuery);
+
+					let recipientUserId;
+					let recipientUserBalance;
+					let recipientEmail;
+
+					recipientUserDetails.forEach((userDoc) => {
+						recipientUserId = userDoc.id;
+						recipientUserBalance = userDoc.data().accountBalance;
+						recipientEmail = userDoc.data().email
+
+						console.log(userDoc.data());
+					});
+
+
+
+					if (!recipientUserId) {
+						alert('Recipient user not found');
+						return;
+					}
+
+					let updatedRecipientUserBalance = recipientUserBalance + amountToTransfer;
+
+					await updateDoc(doc(colRef, recipientUserId), {
+						accountBalance: updatedRecipientUserBalance
+					});
+
+					// Generate a unique serial number for the transaction
+					const serialNumber = generateSerialNumber();
+
+					// Add transaction record
+					await addTransactionRecord(
+						serialNumber,
+						currentUser.email,
+						recipientEmail,
+						narration,
+						amountToTransfer,
+						'successful'
+					);
+
+					alert('Transfer successful');
+				} else {
+					console.log('No user is signed in');
+				}
+			} catch (error) {
+				console.log(error);
+			}
+		});
+
+
+
+
+		// Function to add a new transaction record to the transactionsHistories collection
+		async function addTransactionRecord(serialNumber, sender, recipient, narration, amount, status) {
+			try {
+				const transactionRef = await addDoc(collection(db, 'transactionsHistories'), {
+					serialNumber: serialNumber,
+					sender: sender,
+					recipient: recipient,
+					narration: narration,
+					amount: amount,
+					datetime: new Date().toLocaleString(),
+					status: status
+				});
+
+
+
+				console.log("Transaction record added with ID: ", transactionRef.id);
+			} catch (error) {
+				console.error("Error adding transaction record: ", error);
+			}
+		}
+
+
+		// Function to fetch and display transaction history
+async function fetchTransactionHistory() {
+    try {
+        const querySnapshot = await getDocs(collection(db, 'transactionsHistories'));
+        const tableBody = document.getElementById('transactionTableBody');
+
+        // Clear existing table rows
+        tableBody.innerHTML = '';
+		let index = 0
+        // Iterate through fetched transaction records
+        querySnapshot.forEach(doc => {
+
+			if (index < 5) {
+            const data = doc.data();
+			
+            if (data.sender === currentUser.email || data.recipient === currentUser.email) {
+			
+                const row = document.createElement('tr');
+                // Check if timestamp is valid
+                const timestamp = data.datetime;
+
+                row.innerHTML = `
+                    <td>${++index}</td>
+                    <td>${data.sender || '-'}</td>
+                    <td>${data.recipient || '-'}</td>
+                    <td>${data.narration || '-'}</td>
+                    <td>${data.amount || '-'}</td>
+                    <td>${timestamp}</td> <!-- Display formatted date -->
+                    <td>${data.status || '-'}</td>
+                `;
+                tableBody.appendChild(row);
+            }
+		}
+        });
+    } catch (error) {
+        console.error('Error fetching transaction history:', error);
+    }
+}
+
+fetchTransactionHistory()
+
+	</script>
+
+
+</body>
+
+</html>
